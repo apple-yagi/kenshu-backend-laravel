@@ -1,0 +1,9 @@
+**/.DS_Store
+**/.vscode
+**/.idea
+
+# infra
+infra/mysql/data
+
+# test coverage
+backend/tests-coverage

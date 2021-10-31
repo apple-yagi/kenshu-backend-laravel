@@ -1,0 +1,29 @@
+name: Migrate CI
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "backend/database/migrations/**/*"
+
+env:
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  EC2_USER: ${{ secrets.EC2_USER }}
+  EC2_HOST: ${{ secrets.EC2_HOST }}
+
+jobs:
+  migrate:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Output SECRET_KEY
+      run: |
+        echo "$SECRET_KEY" > secret_key
+        
+    - name: Change permission
+      run: |
+        chmod 600 secret_key
+
+    - name: Migrate
+      run: |
+        ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${EC2_USER}@${EC2_HOST} -i secret_key "sh ~/github-actions-sh/migrate.sh"

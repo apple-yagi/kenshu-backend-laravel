@@ -1,0 +1,46 @@
+html,
+body {
+  background-color: #fff;
+  color: #212529;
+  font-family: 'Nunito',
+  sans-serif;
+  font-weight: 200;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.w-200px {
+  width: 200px;
+}
+
+.w-300px {
+  width: 300px;
+}
+
+.w-600px {
+  width: 600px;
+}
+
+.w-700px {
+  width: 800px;
+}
+
+.h-100px {
+  height: 100px;
+}
+
+.h-200px {
+  height: 200px;
+}
+
+.h-400px {
+  height: 400px;
+}

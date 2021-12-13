@@ -11,7 +11,7 @@ RUN apk update && \
   apk add --update --no-cache \
   libzip-dev libpng-dev icu-dev \
   gcc g++ make automake autoconf gettext libtool nasm bash openssl \
-  nodejs nodejs-npm git
+  nodejs npm git
 
 RUN docker-php-ext-install intl pdo_mysql bcmath exif gd
 

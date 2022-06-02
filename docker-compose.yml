@@ -30,15 +30,11 @@ services:
       - ./backend:/workspace/backend
 
   kenshu-mysql:
-    build:
-      context: ./infra/mysql
-      dockerfile: Dockerfile
-    container_name: kenshu-mysql
+    image: mysql:8.0-oracle
     ports:
       - 3306:3306
     volumes:
       - ./infra/mysql/data:/var/lib/mysql
-      - ./infra/mysql/entorypoint:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_DATABASE=kenshudb
       - MYSQL_USER=kenshu
